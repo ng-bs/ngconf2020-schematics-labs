@@ -1,0 +1,28 @@
+{
+  "name": "ngconf2020-schematics-labs",
+  "version": "1.0.0",
+  "description": "Schematics Night Fever Labs: ng-conf 2020",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && jasmine src/**/*_spec.js",
+    "reset-sample-repo": "git checkout HEAD -- sample-repo && git clean -f -d sample-repo",
+    "ng-add": "npm run build --silent && cd sample-repo && ng g ../:ng-add",
+    "ng-update": "npm run build --silent && cd sample-repo && ng g ../:ng-update"
+  },
+  "keywords": [
+    "schematics"
+  ],
+  "author": "",
+  "license": "MIT",
+  "schematics": "./src/collection.json",
+  "dependencies": {
+    "@angular-devkit/core": "9.0.5",
+    "@angular-devkit/schematics": "9.0.5",
+    "typescript": "3.7.4"
+  },
+  "devDependencies": {
+    "@types/node": "12.11.1",
+    "@types/jasmine": "3.5.0",
+    "jasmine": "3.5.0"
+  }
+}
